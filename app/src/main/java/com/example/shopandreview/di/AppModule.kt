@@ -1,6 +1,7 @@
 package com.example.shopandreview.di
 
 import android.content.Context
+import com.example.shopandreview.BuildConfig
 import com.example.shopandreview.model.ProductWithReviews
 import com.example.shopandreview.model.Review
 import com.example.shopandreview.network.NetworkProcessor
@@ -37,7 +38,7 @@ object AppModule {
     @Provides
     fun provideProductService(): ProductService {
         return Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:3001/")
+            .baseUrl("${BuildConfig.HOST_URL}:3001/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ProductService::class.java)
@@ -47,7 +48,7 @@ object AppModule {
     @Provides
     fun provideReviewService(): ReviewService {
         return Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:3002/")
+            .baseUrl("${BuildConfig.HOST_URL}:3002/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ReviewService::class.java)
