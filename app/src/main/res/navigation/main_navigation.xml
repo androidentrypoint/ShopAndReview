@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.shopandreview.ui.products.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.shopandreview.ui.productdetail.ProductDetailFragment"
+        android:label="ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="product"
+            app:argType="com.example.shopandreview.model.ProductWithReviews" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_ratingDialogFragment"
+            app:destination="@id/ratingDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/ratingDialogFragment"
+        android:name="com.example.shopandreview.ui.RatingDialogFragment"
+        android:label="RatingDialogFragment"
+        tools:layout="@layout/dialog_rating">
+        <argument
+            android:name="product"
+            app:argType="com.example.shopandreview.model.Product" />
+    </dialog>
+</navigation>

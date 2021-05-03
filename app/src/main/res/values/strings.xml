@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShopAndReview</string>
+    <string name="search">Search</string>
+    <string name="product_image">Product Image</string>
+    <string name="price">%1$s%2$.2f</string>
+    <string name="enter_your_comment">Enter your comment</string>
+    <string name="add_review">Add Review</string>
+    <string name="rate_this_product">Rate this product!</string>
+    <string name="back">Back</string>
+</resources>
